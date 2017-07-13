@@ -5,6 +5,6 @@ package exception;
  */
 public class NewException2 extends Exception {
     public NewException2(){
-        System.out.println("exception thrown from NewException1");
+        System.out.println("exception  from NewException2");
     }
 }
