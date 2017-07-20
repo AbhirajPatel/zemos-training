@@ -8,7 +8,7 @@ public class MainClass
 
     public static void main(String[] args) {
 
-        SList sl = new SList<String>();
+        SList<String> sl = new SList<String>();
 
         System.out.println(sl);
 
@@ -25,7 +25,7 @@ public class MainClass
             System.out.println("enter 4 to check it has element :4");
             System.out.println("enter 5 to get the element at specific position:5");
             System.out.println("enter 6 to print the elemnt of list:6");
-            System.out.println("enter anythings else to get out");
+            System.out.println("enter anythings integer(>6) to get out or press" +"^C");
             a= sc.nextInt();
             sc.nextLine();
             switch (a) {
@@ -37,7 +37,7 @@ public class MainClass
                     sLIter.insert(input);
                     break;
                 case 2:
-                    System.out.println("removed");
+                    System.out.println("one element is removed");
                     sLIter.remove();
                     break;
                 case 3:
@@ -50,7 +50,7 @@ public class MainClass
                     System.out.println("enter the position to excess that element (only integer less than no in list)");
                     a=sc.nextInt();
                     sc.nextLine();
-                    System.out.println(sLIter.currentElement(a));
+                    System.out.println("At given index: " +sLIter.currentElement(a));
                     break;}
                 case 6:
                     System.out.println("list: " + sl);
