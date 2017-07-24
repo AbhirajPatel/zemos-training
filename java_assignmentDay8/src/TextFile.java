@@ -58,7 +58,7 @@ public class TextFile {
             System.out.println("something went wrong");
         }
         finally {
-            System.out.println("written on given file:  " +fileName +" , thanku....");
+            System.out.println("written on given file:  " +fileName +" \n, thanku....");
         }
 
     }
