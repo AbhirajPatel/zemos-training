@@ -11,6 +11,10 @@ public class Directory {
     public static int countOfFile = 0;
     private static Pattern pattern;
 
+    /**
+     * show all the file within the home directory.
+     * @param files
+     */
     public void showAllfile(File[] files) {
         StringBuilder stringBuilder = new StringBuilder();
         for (File file : files) {
@@ -24,6 +28,11 @@ public class Directory {
         }
         return;
     }
+
+    /**
+     * show file which matches the given regex
+     * @param files
+     */
     public  void showfiles(File[] files)
     {
 
