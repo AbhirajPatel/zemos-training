@@ -5,36 +5,48 @@
 public class TestClassCasting {
 
      public  void upcasting (){
-         Unicycle obj_unicycle = new Unicycle();
-         Bicycle  obj_bicycle = new Bicycle();
-         Tricycle obj_tricycle = new Tricycle();
+         Unicycle objUnicycle = new Unicycle();
+         Bicycle  objBicycle = new Bicycle();
+         Tricycle objTricycle = new Tricycle();
 
-         Cycle obj_cycle[] = {obj_bicycle,obj_unicycle,obj_tricycle};
+         Cycle objCycle[] = {objBicycle,objUnicycle,objTricycle};
 
-         obj_cycle[0].balance();
-         obj_cycle[1].balance();
-         obj_cycle[2].balance();
+         objCycle[0].balance();
+         objCycle[1].balance();
+         objCycle[2].balance();   // balance method is not there in tricycle, so it will print
+                                 // from cycle class.
 /**
  * this will print the message from the overriden methods in the corresponding subclasses.
- *
+ *  as we are upcasting
  */
-
-
      }
      public void downcasting () {
-         Cycle obj_cycle = new Cycle();
+         //--Downcasting alwayys throw an exception ClasscastException.
+         //--to avoid that we will cast like that.
+         Cycle objuCycle = new Unicycle();
+         Unicycle castedUnicycle = (Unicycle)objuCycle;
 
-         Unicycle obj_unicycle = (Unicycle) obj_cycle;
-         Bicycle obj_bicycle = (Bicycle) obj_cycle;
-         Tricycle obj_tricycle = (Tricycle) obj_cycle;
+         Cycle objbCycle = new Bicycle();
+         Bicycle castedjBycycle = (Bicycle) objbCycle;
 
-         obj_bicycle.balance();
+         Cycle objTcycle = new Tricycle();
+         Tricycle castedTricycle = (Tricycle) objTcycle;
+
+        castedjBycycle.balance();
+         /**
+          * this will print message from the balance method define in th cycle.
+          */
+         //similarly
+         castedUnicycle.balance();
+         castedTricycle.balance();
      }
+
      public static void main (String[] args )
      {
-         TestClassCasting obj_testclass = new TestClassCasting();
+         TestClassCasting objTestclass = new TestClassCasting();
 
-         obj_testclass.upcasting();
+         objTestclass.upcasting();
+         objTestclass.downcasting();
          /**
          /*  the out put is "this is cycle class that is beacuse we have upcast the bicycle as cycle so it will print
          * the method define in the cycle*/

@@ -6,7 +6,8 @@ package classes;
 public class OuterClass1 {
     class InnerClass1 {
         InnerClass1(){
-            System.out.println("InnerClass1 is invoked (inherited from inner class");
+            System.out.println("InnerClass1 is invoked" +
+                    " (inherited from inner class");
         }
     }
 }

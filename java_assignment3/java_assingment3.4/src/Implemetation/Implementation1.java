@@ -7,18 +7,18 @@ import cycles.Cycle;
  */
 public class Implementation1 implements Cycle {
 
-    public void o1_1(){
+    public void cycle(){
         System.out.println("implementing from cycyle");
     }
 
-    public void o1_2(){
+    public void bicycle(){
         System.out.println("implementing from bicycyle");
     }
 
-    public void o1_3(){
+    public void unicycle(){
         System.out.println("implementing from unicycyle");
     }
 
-    public void o1_4() {System.out.println("implementing from tricycyle");}
+    public void tricycle() {System.out.println("implementing from tricycyle");}
 
 }

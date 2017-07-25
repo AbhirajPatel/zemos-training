@@ -11,10 +11,10 @@ public class Main {
     public static void main(String args[])
     {
         Implementing_interface obj = new Implementing_interface();
-        obj.Method_1_1();
-        obj.Method_2_1();
-        obj.Method_3_1();
-        obj.new_Method();
+        obj.method11();
+        obj.method21();
+        obj.method31();
+        obj.newMethod();
         obj.concrete_method();
         try {
             obj.takeInput();

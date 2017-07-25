@@ -9,20 +9,20 @@ import java.io.InputStreamReader;
  */
 public class Implementing_interface  extends ConcreteClass{
 
-    public void Method_1_1(){
+    public void method11(){
          System.out.println("implementing from interface 1");
      }
 
-    public void Method_2_1(){
+    public void method21(){
         System.out.println("implementing from interface 2");
     }
 
-    public void Method_3_1(){
+    public void method31(){
         System.out.println("implementing from interface 3");
     }
 
     @Override
-    public void new_Method(){
+    public void newMethod(){
         System.out.println("implementing from interface new interface");
     }
 
