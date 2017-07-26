@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class MainClassTest {
     @Test
     public void testString() throws Exception {
-        MainClass mainClass = new MainClass();
-        assertTrue(mainClass.testString("AabcdefghIjklMnopqrstuvwxyZ"));
+
+        assertTrue(MainClass.testString("AabcdefghIjklMnopqrstuvwxyZ"));
     }
 }

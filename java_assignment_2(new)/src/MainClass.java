@@ -10,7 +10,7 @@ public class MainClass {
      * test for the presence of all alphabet.
      * @return  boolean
      */
-    public  boolean testString(String string) {
+    public  static boolean testString(String string) {
         // space compelxity = O(1);
         boolean[] b = new boolean[26];
 
@@ -30,15 +30,15 @@ public class MainClass {
         }
 
     public static void main(String[] args) {
-        MainClass mainClass = new MainClass();
+
         System.out.println("please inter the string..");
         Scanner sc = new Scanner(System.in);
 
 
-        if(mainClass.testString(sc.nextLine()))
-        System.out.println("wow..! your string have all alphabates");
+        if(MainClass.testString(sc.nextLine()))
+        System.out.println("wow..! your string have all alphabets");
         else
-            System.out.println("sorry..!, your string does not have all alphabates");
+            System.out.println("sorry..!, your string does not have all alphabets");
     }
 }
 //   final time complexity = O(n);
