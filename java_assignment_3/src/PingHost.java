@@ -1,26 +1,24 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Created by zemoso on 22/7/17.
  */
+
+/**
+ * can ping the given host and give the median of the time taken to ping,
+ * can give the median of an array.
+ */
 public class PingHost {
 
-private static Process process = null;
-
     /**
-     * return the median of the array
+     * return the median of an double array
      * @param doubles
      * @return
      */
-    public double median(double[] doubles) {
+    public static double median(double[] doubles) {
     Arrays.sort(doubles);
 
     if(doubles.length % 2 != 0)
@@ -30,34 +28,42 @@ private static Process process = null;
 }
 
     /**
-     * will run the comand and return output in the list<String>;
+     * will run the comand and return the median of the time taken by it;
      * @param command
      * @return
      */
-    public   List<String> ping(String command) {
-
+    public static double pingNmedian(String command, int Ntime) {
+         Process process ;
+       int count=0;
+        double[] time = new double[Ntime];
+        String string = new String();
         try {
            process = Runtime.getRuntime().exec(command);
+            InputStreamReader inputStreamReader = new InputStreamReader(process.getInputStream());
+            BufferedReader reader = new BufferedReader(inputStreamReader);
 
-            //process.wait();
+            while((string = reader.readLine() )!= null) {
+
+                if (string.contains("time=")) {
+
+                    time[count++] = (Double.parseDouble(string
+                            .substring(string.lastIndexOf("=") + 1,
+                                    string.length() - 3)));
+                }
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        InputStreamReader inputStreamReader = new InputStreamReader(process.getInputStream());
-        BufferedReader reader = new BufferedReader(inputStreamReader);
-        String st = new String();
-        List<String> output = new ArrayList<>();
-
-        try {
-            while((st = reader.readLine() )!= null)
-                output.add(st);
-
-        } catch (IOException e) {
+        catch (Exception e){
             e.printStackTrace();
         }
-        return output;
+        if(count == 0){
+            System.out.println("can not reach.....");
+        }
 
-        // Read the outpu
+        return PingHost.median(time);
+        // Read the output from call
     }
 
     /**
@@ -66,52 +72,21 @@ private static Process process = null;
      */
     public static void main(String[] args) {
 
-    PingHost pingHost = new PingHost();
+
         System.out.println("enter the no of time u want to png");
         Scanner sc= new Scanner(System.in);
         int number= sc.nextInt();
-        System.out.println("enter the website you want to ping");
-       int i=0;
-
+        System.out.println("enter the Host name you want to pingNmedian");
 
         String input = sc.next();
         String command = "ping -c "+String.valueOf(number) + " "+input;
 
-
         System.out.println(command);
 
-        double time[] = new double[number];
-
-
-        try {
-
-            List<String> strings = pingHost.ping(command);
-
-            for (String string : strings)
-            {
-
-                if(string.contains("time=")) {
-                    System.out.println(string);
-
-                    time[i++] = (Double.parseDouble(string
-                            .substring(string.lastIndexOf("=") + 1,
-                                    string.length() - 3)));
-                }
-            }
-
-         //process.waitFor();
-        }
-
-        catch (Exception e)
-        {
-            System.out.println(e.toString());
-        }
-
-        if(i == 0)
-            System.out.println("can not reach.....");
-        else
-        System.out.println("median of time taken :" + pingHost.median(time));
-
+        System.out.println("please wait......");
+         double median = PingHost.pingNmedian(command,number);
+        if(median != 0.0 )
+            System.out.println("mediam of time taken :"+ median);
     }
 
 }

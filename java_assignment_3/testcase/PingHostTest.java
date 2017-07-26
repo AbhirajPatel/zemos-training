@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.*;
 
 /**
@@ -17,10 +14,9 @@ public class PingHostTest {
 
     @org.junit.Test
     public void ping() throws Exception {
-        PingHost pingHost = new PingHost();
-       List<String> strings = pingHost.ping("ping -c 3 google.com");
-       for(String string :strings)
-           System.out.println(string);
+
+       double median  = PingHost.pingNmedian("ping -c 3 google.com" , 3);
+     assertTrue(median  > 0.0);
     }
 
 }
