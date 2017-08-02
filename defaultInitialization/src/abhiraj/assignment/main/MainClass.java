@@ -7,9 +7,6 @@ import abhiraj.assignment.data.TestClass1; // importing the class1
 import abhiraj.assignment.singleton.TestClass2; // importing the class2.
 
 public class MainClass {
-    /*  singleton pattern  */
-    private static final TestClass2 testClass2 = TestClass2.initialisation("ZeMoSo");
-
     /**
      * main method to execute the programme.
      *
@@ -20,7 +17,7 @@ public class MainClass {
         TestClass1 testClass1 = new TestClass1();
         testClass1.printGlobalVar();
         testClass1.printLocalVar();
-
+        TestClass2 testClass2 = TestClass2.initialiseNgetInstance("ZeMoSo");
         testClass2.printString(); /* this will print the argument that we have passed to it */
     }
 }
