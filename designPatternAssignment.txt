@@ -1,0 +1,31 @@
+
+
+Question : java.lang.Runnable??
+Ans :
+Runnable  -  command design pattern
+runnable used  to create and start a thread.  So in the command pattern  we have interface (lets command) and concrete command and user and the invoker. An object( of invoker) use to encapsulate the the information to perform an action. 
+So runnable is an interface and when a class implement it, it is force to define the run() method in it. , but when we create an thread it take the concrete class as argument and hence t has dependency on runnable.
+The start() method of thread is like invoker that call the run method. 
+So basically we have create a command and concrete command and we use it at later time to execute that code. By creating a thread which has dependency on the runnable. 
+So when we call the Threads.start () it will invoke the run() method. (inside which we have define that what command to execute).  
+
+
+ Question : javax.swing.Action ?
+Ans : 
+Action  -  command design pattern. 
+So it is an interface and when a class implement it then it forces it to define all the method in it, basically the main thing in it is  that it has a actionPerformed method (command) where we can
+put what code we have to execute and and later on when an action will occur then actionPerformed method will be invoked, so it take the ActionEvent as an parameter ( like the thread take concrete of runnable as a parameter) when that action will be occurs than the ActionPerformed will b invoked. 
+
+ Question : java.util.logging.Logger#log()
+Ans:
+Logger – Chain of responsibility
+logger has logger hierarchy and in that it goes up to the root, same as in the chain of the responsibility patter, there are many other  classes to which they pass the task if they can’t handle it, and all have the reference to the next class in define order. 
+Log() function log the message to a central system, depending upon the log level ( below in hirechy are ignored) and it has different handler ( console, file etc) to where the message is to be logged. 
+
+Question : javax.servlet.Filter#doFilter()
+Ans:
+
+Filter  doFilter()– chain of responsibility design patten
+ similar to the Logger, here the client pass the request/ response and that is pass through the end of the chain, (there may b lots of the filter between the servlet ad the client) the fileterChian passes in this doFilter allow it to pass the request to chain. Is it is not allowable to pass through some filter them it will returned back other wise it will be passed to next filterchain. 
+A chain is maintain in same way  as a chain of the responsibility pattern. There is one interface that is implemented by many other classes and they have reference to next class in define order and request is passed from one end, that goes form one to another and so on. 
+
