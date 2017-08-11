@@ -5,10 +5,8 @@ public class Mouse extends Rodent {
     Mouse(){   // default constructor
             System.out.println("this is a Mouse");
     }
+    @Override
     public void properties(){
-        /**
-         * this will give the property of the class and track that from it inherit.
-         */
         System.out.println("this is a Rodent-Mouse");
     }
 }

@@ -13,12 +13,7 @@ public class TestClassCasting {
 
          objCycle[0].balance();
          objCycle[1].balance();
-         objCycle[2].balance();   // balance method is not there in tricycle, so it will print
-                                 // from cycle class.
-/**
- * this will print the message from the overriden methods in the corresponding subclasses.
- *  as we are upcasting
- */
+         objCycle[2].balance();
      }
      public void downcasting () {
          //--Downcasting alwayys throw an exception ClasscastException.

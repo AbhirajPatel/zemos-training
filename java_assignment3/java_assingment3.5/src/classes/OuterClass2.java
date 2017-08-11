@@ -1,14 +1,15 @@
 package classes;
-import  classes.OuterClass1.*;
-import  classes.OuterClass1.InnerClass1;
+
+import classes.OuterClass1.*;
+import classes.OuterClass1.InnerClass1;
+
 /**
  * Created by zemoso on 12/7/17.
  */
 public class OuterClass2 {
 
-     class InnerClass extends OuterClass1.InnerClass1  {
-       InnerClass()
-        {
+    class InnerClass extends OuterClass1.InnerClass1 {
+        InnerClass() {
 
             new OuterClass1().super();
             System.out.println("this is second inner class");
@@ -16,9 +17,9 @@ public class OuterClass2 {
         }
 
 
-    public void innermethod (){
-        System.out.println("inner class2 method is invoked");
-    }
+        public void innermethod() {
+            System.out.println("inner class2 method is invoked");
+        }
 
     }
 
