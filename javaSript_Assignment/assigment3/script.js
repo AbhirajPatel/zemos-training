@@ -259,11 +259,8 @@ loadMenu();
         }
     }
    function OninputvalueChange(idOfparent ,ID , value){
-    console.log(ID);
-    console.log(value);
     var td = idOfparent.parentElement;
     var item = td.getElementsByTagName("td")[1].textContent;
-    console.log(item);
     value = parseInt(value);
     if(!isNaN(value)){
 
@@ -277,7 +274,7 @@ loadMenu();
                while(tableList.list[i].items.indexOf(item) > -1){
 
                 tableList.list[i].items.splice(tableList.list[i].items.indexOf(item) , 1);
-                console.log("index: " +tableList.list[i].items.indexOf(item));
+               
                }
                while(value > 0){
                 tableList.list[i].items.splice(firstIndex, 0, item);
