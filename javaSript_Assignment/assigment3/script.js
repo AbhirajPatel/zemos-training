@@ -142,7 +142,7 @@ loadMenu();
                }
            }
            }
-         updateTotalPrice();
+               updateTotalPrice();
                updateRow(ID);
                tableUpdate();
     }
@@ -237,7 +237,7 @@ loadMenu();
         var orderHeading= document.getElementById("heading3");
         var orderDetail = document.createElement("div");
         orderDetail.setAttribute("id" , "orderDetailDiv");
-        orderHeading.textContent = "" + this.id + " : " + "order detail" ;
+        orderHeading.textContent = "" + ID + " : " + "order detail" ;
         orderHeading.style.color = "white";
         document.getElementById("table-modal").appendChild(orderDetail);
         document.getElementById("inner-modal").appendChild(orderHeading);
